@@ -6,9 +6,9 @@ import * as path from "path";
 import * as fs from "fs";
 
 function createPrisma() {
-  if (process.env.TURSO_AUTH_TOKEN) {
+  if (process.env.TURSO_AUTH_TOKEN && process.env.TURSO_DATABASE_URL) {
     const adapter = new PrismaLibSql({
-      url: process.env.DATABASE_URL!,
+      url: process.env.TURSO_DATABASE_URL,
       authToken: process.env.TURSO_AUTH_TOKEN,
     });
     return new PrismaClient({ adapter } as never);
