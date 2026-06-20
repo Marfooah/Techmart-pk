@@ -1,3 +1,6 @@
+import * as dotenv from "dotenv";
+dotenv.config({ path: ".env" });
+
 import { ingestKnowledgeBase } from "../src/ai/rag/search";
 
 ingestKnowledgeBase()
