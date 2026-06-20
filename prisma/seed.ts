@@ -1,8 +1,20 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaLibSql } from "@prisma/adapter-libsql";
 import { faker } from "@faker-js/faker";
 import * as XLSX from "xlsx";
 import * as path from "path";
 import * as fs from "fs";
+
+function createPrisma() {
+  if (process.env.TURSO_AUTH_TOKEN) {
+    const adapter = new PrismaLibSql({
+      url: process.env.DATABASE_URL!,
+      authToken: process.env.TURSO_AUTH_TOKEN,
+    });
+    return new PrismaClient({ adapter } as never);
+  }
+  return new PrismaClient();
+}
 import { hashPassword } from "../src/lib/auth/password";
 import {
   generateTicketNumber,
@@ -18,7 +30,7 @@ import {
   aiAuditQuery,
 } from "./seed/copy";
 
-const prisma = new PrismaClient();
+const prisma = createPrisma();
 const DATA_DIR = path.join(process.cwd(), "data/source");
 
 function excelDateToJS(serial: number): Date {
