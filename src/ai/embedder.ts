@@ -24,7 +24,7 @@ export async function embedTexts(texts: string[]): Promise<number[][]> {
   }
 
   const client = getClient();
-  const model = client.getGenerativeModel({ model: "text-embedding-004" });
+  const model = client.getGenerativeModel({ model: "gemini-embedding-001" });
   const embeddings: number[][] = [];
 
   for (const text of texts) {
