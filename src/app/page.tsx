@@ -93,10 +93,12 @@ export default function LandingPage() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-32">
-        <div className="absolute inset-0 grid-pattern opacity-40" />
-        <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-emerald-500/20 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-cyan-500/15 blur-3xl" />
+      <section className="relative pt-28 pb-20 md:pt-36 md:pb-32">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 grid-pattern opacity-40" />
+          <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-cyan-500/15 blur-3xl" />
+        </div>
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <motion.div
@@ -109,7 +111,7 @@ export default function LandingPage() {
               <Sparkles className="h-4 w-4 text-primary" />
               <span>AI-powered support for Pakistani shoppers</span>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               Electronics shopping with{" "}
               <br className="hidden sm:block" />
               <span className="text-gradient">intelligent support</span>
