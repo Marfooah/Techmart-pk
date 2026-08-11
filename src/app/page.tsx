@@ -111,7 +111,7 @@ export default function LandingPage() {
             </div>
             <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
               Electronics shopping with{" "}
-              <span className="text-gradient">intelligent support</span>
+              <span className="text-gradient whitespace-nowrap">intelligent support</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
               TechMart Pakistan delivers consumer tech nationwide. Track orders in PKR,
