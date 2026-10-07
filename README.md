@@ -19,7 +19,7 @@ npm run setup                # seed DB + ingest RAG
 npm run dev
 ```
 
-Open **http://localhost:3000**
+Open **https://techmart-mk98letrq-marfooahs-projects.vercel.app**
 
 ## API Key (safe setup)
 
